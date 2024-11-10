@@ -11,4 +11,4 @@ router.post('/', BookControllers.createBooks);
 // router.put('/:bookId', BookControllers.updateBook);
 // router.delete('/:bookId', BookControllers.deleteBook);
 
-export const BookRoutes = router;
+export const BookRoute = router;
