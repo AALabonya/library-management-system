@@ -1,6 +1,7 @@
 import cookieParser from 'cookie-parser';
 import express, { Application, NextFunction, Request, Response} from 'express';
 import cors from 'cors';
+import globalErrorHandler from './app/middleware/globalErrorHandler';
 
 const app: Application = express();
 app.use(cors());
@@ -12,15 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-// cron.schedule('* * * * *', () => {
-//     try {
-//         AppointmentService.cancelUnpaidAppointments();
-//     }
-//     catch (err) {
-//         console.error(err);
-//     }
-// });
-
 app.get('/', (req: Request, res: Response) => {
     res.send({
         Message: "Ph health care server.."
@@ -29,7 +21,7 @@ app.get('/', (req: Request, res: Response) => {
 
 // app.use('/api/v1',);
 // app.use('/api/v1',);
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     res.status(404).json({
