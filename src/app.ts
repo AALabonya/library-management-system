@@ -2,6 +2,7 @@ import cookieParser from 'cookie-parser';
 import express, { Application, NextFunction, Request, Response} from 'express';
 import cors from 'cors';
 import globalErrorHandler from './app/middleware/globalErrorHandler';
+import router from './app/routes';
 
 const app: Application = express();
 app.use(cors());
@@ -19,7 +20,7 @@ app.get('/', (req: Request, res: Response) => {
     })
 });
 
-// app.use('/api/v1',);
+app.use('/api', router );
 // app.use('/api/v1',);
 app.use(globalErrorHandler);
 
