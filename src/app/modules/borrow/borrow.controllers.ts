@@ -38,7 +38,30 @@ const borrowBooks = async (req: Request, res: Response) => {
       });
     }
   };
-
+// borrow overdue book
+const borrowOverdueBook = async (req: Request, res: Response) => {
+    try {
+      const result = await borrowServices.borrowOverdueBook();
+  
+      // Send response based on the result
+      res.status(200).json({
+        success: true,
+        status: 200,
+        message: result.length > 0 ? "Overdue borrow list fetched." : "No overdue books.",
+        data: result,
+      });
+    } catch (error:any) {
+      // Handle any errors that may occur
+      res.status(500).json({
+        success: false,
+        status: 500,
+        message: error.message || "Internal server error",
+      });
+    }
+  };
+  
+  
     export const borrowControllers={
-borrowBooks
+borrowBooks,
+borrowOverdueBook
   }
