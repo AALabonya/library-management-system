@@ -52,10 +52,8 @@ The Library Management System API is a backend solution designed to manage books
   - POST /api/borrow
   - POST /api/return
   - GET /api/borrow/overdue
-  
-# Backend server setup and how to running
 
-## Setup Instructions
+# Backend server setup and Instructions
 
 1. Clone the repository:
    ```
