@@ -11,10 +11,10 @@ const returnBorrowedBook = async (req: Request, res: Response) => {
     res.status(result.status).json(result);
     
   
-    console.log("this is log", result);
+    // console.log("this is log", result);
   } catch (error: any) {
 
-    console.error("Error occurred while returning borrowed book:", error);
+    // console.error("Error occurred", error);
 
 
     res.status(500).json({
