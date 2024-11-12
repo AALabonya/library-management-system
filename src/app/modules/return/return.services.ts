@@ -2,10 +2,10 @@ import { prisma } from "../../shared/prisma";
 
 
 // return borrowed book into the database
-const returnBorrowedBook = async (borrowId: string) => {
+const returnBorrowedBook = async (payload:{borrowId: string}) => {
   const isBorrowRecordExist = await prisma.borrow.findUnique({
     where: {
-      borrowId,
+      borrowId:payload.borrowId,
     },
   });
 
@@ -16,7 +16,7 @@ const returnBorrowedBook = async (borrowId: string) => {
 
   await prisma.borrow.update({
     where: {
-      borrowId,
+      borrowId:payload.borrowId,
     },
     data: {
       returnDate: new Date(),

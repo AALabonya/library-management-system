@@ -41,9 +41,9 @@ const borrowBooks = async (req: Request, res: Response) => {
 // borrow overdue book
 const borrowOverdueBook = async (req: Request, res: Response) => {
     try {
-      const result = await borrowServices.borrowOverdueBook();
+      const result = await borrowServices.getBorrowOverdueBooks();
   
-      // Send response based on the result
+    
       res.status(200).json({
         success: true,
         status: 200,
@@ -51,7 +51,7 @@ const borrowOverdueBook = async (req: Request, res: Response) => {
         data: result,
       });
     } catch (error:any) {
-      // Handle any errors that may occur
+      
       res.status(500).json({
         success: false,
         status: 500,
