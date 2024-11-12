@@ -59,19 +59,20 @@ The Library Management System API is a backend solution designed to manage books
 
 1. Clone the repository:
 
-   ```bash 
+```node
    git clone https://github.com/AALabonya/library-management-system
    ```
 2. Install dependencies:
-  ```bash
+```node
    npm install
    ```
+   
 3. Set up the .env File
-  ```bash
+```node
      PORT = 5000;
      DATABASE_URL ='postgresql://username:password@localhost:5432/mydatabase?schema=public';
   ```
- 5. Generate Prisma Client
+5. Generate Prisma Client
 After setting up the `.env` file, generate the Prisma client based on our Prisma schema by running:
 
 ```node
@@ -79,11 +80,12 @@ npx prisma generate
 ```
 
 4. Run Prisma migrations:
-   ```bash
-    npx prisma migrate dev
-    ```
-    
+```node
+   npx prisma migrate dev
+ ```
+
 5. Start the server:
-   ```bash
+
+```node
    npm run dev
    ```
