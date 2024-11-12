@@ -1,14 +1,14 @@
-# Project Overview
+# Project: Library Management System
 
 
 # Live URL:
 
 ```bash
-https://assignment8-server.onrender.com
+https://library-management-taupe-ten.vercel.app/
 ```
 
 # Project description
- Book Library management system there we can create book and this book any member can borrow. This backend server we have tow user like admin and member. Admin user manage book and manipulate this book and. Member can borrow book and also return borrowed book as well. BOOKIE have organized backend system there handle error and use modular pattern to scala out project.
+The Library Management System API is a backend solution designed to manage books, members, and borrowing activities efficiently. It features CRUD operations for books and members, uses UUIDs for unique identification, and includes endpoints for borrowing and returning books. The system also tracks overdue books with a 14-day policy, ensuring smooth library operations and robust data management.
 
 # Technologies Used
 
